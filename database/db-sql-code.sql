@@ -52,7 +52,7 @@ INSERT INTO public.inventory (
         inv_year,
         inv_description,
         inv_image,
-        assignment2.sql inv_thumbnail,
+        inv_thumbnail,
         inv_price,
         inv_miles,
         inv_color,
