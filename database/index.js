@@ -14,10 +14,14 @@ if (process.env.NODE_ENV == "development") {
       rejectUnauthorized: false,
     },
 })
+} else {
+  pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+  });
+}
 
-// Added for troubleshooting queries
-// during development
-module.exports = {
+if (process.env.NODE_ENV === "development") {
+  module.exports = {
   async query(text, params) {
     try {
       const res = await pool.query(text, params)
