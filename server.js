@@ -12,6 +12,7 @@ const env = require("dotenv").config()
 const baseController = require("./controllers/baseController");
 const app = express()
 const static = require("./routes/static")
+const inventoryRoute = require("./routes/inventoryRoute");    
 
 
 
@@ -23,6 +24,9 @@ app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout") // not at views root
 app.use(static)
+
+// Inventory routes
+app.use("/inv", inventoryRoute);
 
 //Index route
 
